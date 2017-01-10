@@ -40,7 +40,8 @@ class BingoWord
 
     public function slug()
     {
-        return str_replace(' ', '-', strtolower($this->word));
+        $replace = str_replace(',', '', strtolower($this->word));
+        return str_replace(' ', '-', $replace);
     }
 
     public function toString()
