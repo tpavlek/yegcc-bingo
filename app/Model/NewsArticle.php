@@ -74,7 +74,7 @@ class NewsArticle extends Model
                     $instance->id = Uuid::uuid4()->toString();
                 }
 
-                $instance->message = $comment['message'];
+                $instance->message = utf8_encode($comment['message']);
                 $instance->author_id = $comment['from']['id'];
                 $instance->author_name = $comment['from']['name'];
 

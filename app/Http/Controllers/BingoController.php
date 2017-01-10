@@ -49,12 +49,14 @@ class BingoController extends Controller
             BingoWord::initialize('Government Pigs', 'trough', 'oink'),
             BingoWord::initialize('Wasteful spending', 'wasting money', 'wasting tax', 'wasting dollars'),
             BingoWord::initialize('Big Silver Balls', 'silver balls', 'talus dome'),
-            BingoWord::initialize('Jaywalkers', 'jaywalk', 'jaywalking', 'distracted walkers', 'glued to phone')
+            BingoWord::initialize('Jaywalkers', 'jaywalk', 'jaywalking', 'distracted walkers', 'glued to phone'),
+            BingoWord::initialize('Tax', '$$$'),
+            BingoWord::initialize('Election')
         ];
 
         shuffle($bingos);
 
-        $words = new BingoWordCollection(collect($bingos), $article->comments);
+        $words = new BingoWordCollection(collect($bingos)->slice(0, 20), $article->comments);
 
         return view('bingo.show')->with('article', $article)->with('words', $words);
     }
