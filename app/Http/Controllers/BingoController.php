@@ -37,7 +37,7 @@ class BingoController extends Controller
             BingoWord::initialize('Photo Radar'),
             BingoWord::initialize('Cash Grab', 'cash cow'),
             BingoWord::initialize('Bike Lanes', 'bike lane', 'bikelane'),
-            BingoWord::initialize('Tax Dollars', 'taxes'),
+            BingoWord::initialize('Tax Dollars', 'taxes', 'taxpayer money', 'tax payer money'),
             BingoWord::initialize('Carbon Tax'),
             BingoWord::initialize('iveRson'),
             BingoWord::initialize('Pet Projects', 'pet project'),
@@ -47,11 +47,13 @@ class BingoController extends Controller
             BingoWord::initialize('Raise Speed Limits', 'higher speeds', 'higher speed', 'more speed', 'faster'),
             BingoWord::initialize('Lower Speed Limits', 'lower speeds', 'lower speed', 'less speed', 'slower'),
             BingoWord::initialize('Government Pigs', 'trough', 'oink'),
-            BingoWord::initialize('Wasteful spending', 'wasting money', 'wasting tax', 'wasting dollars'),
+            BingoWord::initialize('Wasteful spending', 'wasting money', 'wasting tax', 'wasting dollars', 'burn money'),
             BingoWord::initialize('Big Silver Balls', 'silver balls', 'talus dome'),
             BingoWord::initialize('Jaywalkers', 'jaywalk', 'jaywalking', 'distracted walkers', 'glued to phone'),
             BingoWord::initialize('Tax', '$$$'),
-            BingoWord::initialize('Election')
+            BingoWord::initialize('Election'),
+            BingoWord::initialize("It's not about safety", 'not about safety', "doesn't increase safety", "doesn't help safety"),
+            BingoWord::initialize("Over Budget, behind schedule", 'behind schedule', 'over budget')
         ];
 
         shuffle($bingos);
