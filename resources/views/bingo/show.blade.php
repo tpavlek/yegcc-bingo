@@ -21,11 +21,12 @@
 
     .bingo-item {
         display: flex;
+        flex-flow: row wrap;
         justify-content: center;
         align-items: center;
         width: 4em;
-        max-width: 20%;
-        height: 6em;
+        max-width: 8em;
+        height: 5em;
         background: lightgray; padding: 1em; border: 1px solid black; flex-basis: 20%; font-size: 2em;
     }
 

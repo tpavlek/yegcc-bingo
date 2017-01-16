@@ -64,7 +64,7 @@ class BingoController extends Controller
 
         shuffle($bingos);
 
-        $words = new BingoWordCollection(collect($bingos)->slice(0, 20), $article->comments);
+        $words = new BingoWordCollection(collect($bingos)->slice(0, 25), $article->comments);
 
         return view('bingo.show')->with('article', $article)->with('words', $words);
     }
