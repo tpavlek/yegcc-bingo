@@ -54,7 +54,7 @@ class BingoController extends Controller
             BingoWord::initialize('Election'),
             BingoWord::initialize("It's not about safety", 'not about safety', "doesn't increase safety", "doesn't help safety"),
             BingoWord::initialize("Over Budget, behind schedule", 'behind schedule', 'over budget'),
-            BingoWord::initialize("Millenials", 'millenial'),
+            BingoWord::initialize("Millennials", "millennial", "Millenials", 'millenial'),
             BingoWord::initialize("Entitled"),
             BingoWord::initialize("Lot Splitting", 'skinny houses', 'skinny homes'),
             BingoWord::initialize("Buck stops here", 'accountable', 'accountability'),
