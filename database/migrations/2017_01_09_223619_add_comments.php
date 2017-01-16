@@ -17,7 +17,7 @@ class AddComments extends Migration
             $table->uuid('id')->primary();
 
             $table->uuid('article_id');
-            $table->foreign('article_id')->references('id')->on('news_articles');
+            $table->foreign('article_id')->references('id')->on('news_articles')->onDelete('cascade');
 
             $table->text('message');
             $table->string('fb_id');
