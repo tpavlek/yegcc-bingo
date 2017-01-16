@@ -28,8 +28,9 @@ class NewsArticle extends Model
         });
     }
 
-    public static function forUrl($url)
+    public static function forUrl($url, $force = false)
     {
+        /** @var self $instance */
         $instance = self::query()->where([ 'url' => $url ])->first();
 
         if ($instance === null) {
@@ -51,7 +52,7 @@ class NewsArticle extends Model
             $instance->save();
         }
 
-        $instance->syncComments();
+        $instance->syncComments($force);
         return $instance;
     }
 
@@ -60,9 +61,9 @@ class NewsArticle extends Model
         return ($this->last_queried === null) || ($this->last_queried->addHour()->lt(Carbon::now()));
     }
 
-    public function syncComments()
+    public function syncComments($force = false)
     {
-        if (!$this->shouldSyncComments()) {
+        if (!$force && !$this->shouldSyncComments()) {
             return;
         }
 

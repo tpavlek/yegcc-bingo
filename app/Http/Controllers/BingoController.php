@@ -22,7 +22,7 @@ class BingoController extends Controller
     {
         $url = $request->get('article_url');
 
-        $article = NewsArticle::forUrl($url);
+        $article = NewsArticle::forUrl($url, $request->get('force', false));
 
         return redirect()->route('bingo.show', $article->id);
     }
