@@ -23,7 +23,7 @@ class BingoWord
 
     public static function greatPun()
     {
-        return new GreatPun([ 'City Clowncil' ]);\
+        return new GreatPun([ 'City Clowncil' ]);
     }
 
     public function comparisonWords()
