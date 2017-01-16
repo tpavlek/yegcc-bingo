@@ -36,12 +36,12 @@ class BingoController extends Controller
             BingoWord::initialize('Bridge'),
             BingoWord::initialize('Photo Radar'),
             BingoWord::initialize('Cash Grab', 'cash cow'),
-            BingoWord::initialize('Bike Lanes', 'bike lane', 'bikelane'),
+            BingoWord::initialize('Bike Lanes', 'bike lane', 'bikelane', 'bicyclists', 'cyclists', 'bike riders'),
             BingoWord::initialize('Tax Dollars', 'taxes', 'taxpayer money', 'tax payer money'),
             BingoWord::initialize('Carbon Tax'),
             BingoWord::initialize('iveRson'),
             BingoWord::initialize('Pet Projects', 'pet project'),
-            BingoWord::initialize('LRT', 'metro line'),
+            BingoWord::initialize('LRT', 'metro line', 'trains'),
             BingoWord::initialize('As a Taxpayer', 'I pay taxes'),
             BingoWord::initialize('Free Parking', 'parking'),
             BingoWord::initialize('Raise Speed Limits', 'higher speeds', 'higher speed', 'more speed', 'faster'),
@@ -50,10 +50,16 @@ class BingoController extends Controller
             BingoWord::initialize('Wasteful spending', 'wasting money', 'wasting tax', 'wasting dollars', 'burn money'),
             BingoWord::initialize('Big Silver Balls', 'silver balls', 'talus dome'),
             BingoWord::initialize('Jaywalkers', 'jaywalk', 'jaywalking', 'distracted walkers', 'glued to phone'),
-            BingoWord::initialize('Tax', '$$$'),
+            BingoWord::initialize('Tax', '$$$', 'Taxing'),
             BingoWord::initialize('Election'),
             BingoWord::initialize("It's not about safety", 'not about safety', "doesn't increase safety", "doesn't help safety"),
-            BingoWord::initialize("Over Budget, behind schedule", 'behind schedule', 'over budget')
+            BingoWord::initialize("Over Budget, behind schedule", 'behind schedule', 'over budget'),
+            BingoWord::initialize("Millenials", 'millenial'),
+            BingoWord::initialize("Entitled"),
+            BingoWord::initialize("Lot Splitting", 'skinny houses', 'skinny homes'),
+            BingoWord::initialize("Buck stops here", 'accountable', 'accountability'),
+            BingoWord::initialize("Arena", "Rogers Place", "Rogers Stadium"),
+            BingoWord::greatPun(),
         ];
 
         shuffle($bingos);

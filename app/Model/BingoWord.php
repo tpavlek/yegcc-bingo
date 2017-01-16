@@ -7,8 +7,8 @@ use Illuminate\Support\Collection;
 class BingoWord
 {
 
-    private $word;
-    private $synonyms;
+    protected $word;
+    protected $synonyms;
 
     public function __construct($word, $synonyms)
     {
@@ -19,6 +19,11 @@ class BingoWord
     public static function initialize($word, ...$synonyms)
     {
         return new self($word, $synonyms);
+    }
+
+    public static function greatPun()
+    {
+        return new GreatPun([ 'City Clowncil' ]);\
     }
 
     public function comparisonWords()
