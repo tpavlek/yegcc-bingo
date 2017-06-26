@@ -4,6 +4,8 @@ namespace App\Model;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Monolog\Handler\PsrHandler;
+use Opengraph\Reader;
 use Ramsey\Uuid\Uuid;
 
 class NewsArticle extends Model
@@ -51,6 +53,16 @@ class NewsArticle extends Model
 
             $instance->save();
         }
+
+        if ($instance->image_url === null) {
+            $reader = (new Reader());
+            $reader->parse(file_get_contents($url));
+
+            $instance->image_url = $reader->getMeta('og:image');
+
+            $instance->save();
+        }
+
 
         $instance->syncComments($force);
         return $instance;

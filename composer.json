@@ -6,7 +6,8 @@
     "require": {
         "php": ">=5.6.4",
         "laravel/framework": "5.3.*",
-        "facebook/graph-sdk": "^5.4"
+        "facebook/graph-sdk": "^5.4",
+        "euskadi31/opengraph": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

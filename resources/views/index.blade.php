@@ -3,7 +3,8 @@
 @section('content')
 
     <h1>#yegcc Bingo!</h1>
-    <div class="whitecard">
+
+    <div class="card-panel">
         <p>
             #yegcc Bingo is easy to play! Simply enter the link to an Edmonton Journal Article (or select from other submitted ones)
         </p>
@@ -15,29 +16,47 @@
         <p>
             This site was made with 💖 (and sarcasm) by <a href="https://tpavlek.me">Troy Pavlek</a>
         </p>
-    </div>
 
-    <div class="whitecard">
-        <form action="{{ route('bingo.new_article') }}" method="POST">
+        <form action="{{ route('bingo.new_article') }}" method="POST" class="col s12">
             {{ csrf_field() }}
-            <label for="article_url">Article URL:
-                <input type="text" name="article_url" />
-            </label>
 
-            <input type="submit" value="Submit" />
-
+            <div class="row">
+                <div class="input-field col s8">
+                    <input placeholder="Edmonton Journal Article" id="article_url" name="article_url" type="text" class="validate">
+                    <label for="article_url">Article URL</label>
+                </div>
+                <div class="input-field col s4">
+                    <button class="waves-effect waves-light btn-large"><i class="material-icons right">play_arrow</i>Play Now</button>
+                </div>
+            </div>
         </form>
     </div>
 
-    <div class="whitecard">
-        <h2 style="color:black;">Other submitted articles...</h2>
-        <hr />
+    <h1>Some recent articles...</h1>
+
+    <div class="row">
         @foreach ($articles as $article)
-            <div>
-                <h3><a href="{{ route('bingo.show', $article->id) }}">{{ $article->title }}</a></h3>
-                <h4>{{ $article->description }}</h4>
-            </div>
-            <hr />
+
+                <div class="col s4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{ $article->image_url }}">
+
+                            <a class="btn-floating btn-large halfway-fab waves-effect waves-light red" href="{{ route('bingo.show', $article->id) }}"><i class="material-icons">play_arrow</i></a>
+                        </div>
+
+                        <div class="card-content">
+                            <span class="card-title">{{ $article->title }}</span>
+                            <p>
+                                {{ $article->description }}
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <a href="{{ route('bingo.show', $article->id) }}">Play Article</a>
+                        </div>
+                    </div>
+                </div>
+
         @endforeach
     </div>
 

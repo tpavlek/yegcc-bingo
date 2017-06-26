@@ -20,6 +20,7 @@ class CreateNewsArticle extends Migration
             $table->string('og_id');
             $table->string('title');
             $table->string('description');
+            $table->string('image_url')->nullable();
 
             $table->dateTime('last_queried')->nullable()->default(null);
             $table->timestamps();
